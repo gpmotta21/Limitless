@@ -1,0 +1,145 @@
+#homepage {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 750px;
+  position: relative;
+
+  .woman {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 55%;
+    right: 3%;
+    z-index: 1;
+    object-fit: contain;
+  }
+
+  b {
+    color: $purple;
+  }
+
+  // Presentation text
+  .presentation {
+    @include flex(column);
+    justify-content: center;
+    gap: 50px;
+    width: 700px;
+    height: auto;
+    margin-left: 50px;
+    font-family: "Alegreya Sans SC", sans-serif;
+    color: $black;
+    background-color: $white;
+
+    h1 {
+      font-size: 75px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+
+    // Buttons container
+    span {
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 10px;
+
+      a {
+        font-size: 20px;
+        overflow: hidden;
+        z-index: 1;
+        padding: 7px;
+        transition: all 0.5s;
+        font-weight: 900;
+        @include border-purple;
+
+        &:last-of-type {
+          background-color: rgba(120, 88, 255, 0.2);
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+// Font and image sizes adjustments
+@media (max-width: 1500px) {
+  #homepage {
+    .woman {
+      top: 55%;
+      width: 490px;
+    }
+
+    .presentation {
+      width: 480px;
+      margin-left: 15px;
+
+      h1 {
+        font-size: 56px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+// Moving horizontally presentation container to center of screen
+@media (max-width: 1150px) {
+  #homepage {
+    align-items: flex-start;
+    justify-content: center;
+
+    .woman {
+      transform: translate(-50%, -100%);
+      top: 100%;
+      left: 49%;
+      width: 372px;
+    }
+
+    .presentation {
+      width: 70%;
+      margin-top: 75px;
+      margin-left: 0;
+      gap: 30px;
+
+      h1 {
+        font-size: 34px;
+      }
+
+      p,
+      span a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// Font and image sizes adjustments
+@media (max-width: 510px) {
+  #homepage {
+    height: 700px;
+
+    .woman {
+      width: 300px;
+    }
+
+    .presentation {
+      width: 90%;
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p,
+      span a {
+        font-size: 16px;
+        padding: 3px;
+      }
+    }
+  }
+}

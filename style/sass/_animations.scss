@@ -1,0 +1,40 @@
+.slide-right {
+  animation: slide-right 1s ease-in-out both;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-left {
+  animation: slide-left 1s ease-in-out both;
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slide-up 1s ease-in-out both;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

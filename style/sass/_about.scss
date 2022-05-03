@@ -1,0 +1,174 @@
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-top: 50px;
+  color: $black;
+
+  .client {
+    display: flex;
+    opacity: 0;
+
+    // Text container
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      flex: auto;
+      position: relative;
+      height: auto;
+      text-align: center;
+      background-color: rgba(217, 236, 252, 1);
+
+      h1 {
+        font-family: "Allerta Stencil", sans-serif;
+        font-size: 40px;
+      }
+
+      p,
+      button {
+        font-family: "Aleo", serif;
+        font-size: 22px;
+      }
+
+      p:first-of-type {
+        margin-top: -50px;
+        width: 60%;
+      }
+
+      button {
+        padding: 9px;
+        background: none;
+        background-color: $purple;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.5s;
+        color: $white;
+
+        i {
+          color: $white;
+          font-size: 16px;
+          margin-left: 8px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      // Triangle svg inside of image
+      // This element will be removed once the screen reach a certain point
+      &::after {
+        content: url("../../assets/img/triangle.svg");
+        position: absolute;
+        width: auto;
+        height: 402px;
+        transform: translateX(-100%);
+        left: 0;
+        z-index: 3;
+      }
+    }
+  }
+
+  .client:last-of-type {
+    opacity: 0;
+  }
+
+  // Triangle element of the last container
+  .client:last-of-type div:after {
+    left: 100%;
+    transform: rotate(180deg);
+  }
+}
+
+// Text container gets moved to the front of the image using position absolute
+@media (max-width: 1530px) {
+  #about {
+    color: $white;
+
+    .client {
+      position: relative;
+      width: auto;
+      margin: 0 auto;
+
+      div {
+        background-color: rgba(217, 236, 252, 0.3);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+
+        // Triangle element
+        &:after {
+          display: none;
+        }
+      }
+
+      img {
+        transition: all 0.5s;
+      }
+
+      &:hover img {
+        filter: blur(3px);
+      }
+    }
+  }
+}
+
+// Font and image sizes adjustments
+@media (max-width: 950px) {
+  #about .client {
+    img {
+      width: 600px;
+    }
+
+    div {
+      h1 {
+        font-size: 31px;
+      }
+
+      p,
+      button {
+        font-size: 16px;
+      }
+
+      i {
+        font-size: 12px !important;
+      }
+
+      p:first-of-type {
+        margin-top: 0px;
+        width: 60%;
+      }
+    }
+  }
+}
+
+// Font and image sizes adjustments
+@media (max-width: 660px) {
+  #about {
+    gap: 20px;
+
+    .client {
+      img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  #about .client {
+    img {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+    }
+  }
+}

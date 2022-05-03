@@ -1,0 +1,10 @@
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin border-purple {
+  color: $purple;
+  border: solid 3px $purple;
+  border-radius: 5px;
+}

@@ -1,0 +1,26 @@
+#brands {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 0;
+
+  span {
+    margin-bottom: 20px;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-weight: 800;
+    color: $black;
+  }
+
+  img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1050px) {
+  #brands img {
+    width: 260px;
+  }
+}
